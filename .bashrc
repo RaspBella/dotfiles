@@ -8,6 +8,6 @@
 #alias's
 alias ls='ls --color=auto'
 alias startawesome='startx ~/.wms/awesome/.xinitrc'
+alias l="exa -la"
 
-PS1='[\u@\h \W]\$ '
 eval "$(starship init bash)"
