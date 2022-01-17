@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+#Vim
+EDITOR=vim
+
 #completion
 complete -cf sudo
 
