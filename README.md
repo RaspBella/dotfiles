@@ -1,5 +1,5 @@
 # dotfiles
-## To copy to your home directory:
+## To copy dotfiles to your home directory:
 ```sh
 make
 ```
