@@ -1,3 +1,3 @@
 default:
-	cp --backup .bash* ~
+	cp --backup .bash* .xinitrc ~
 	cp --backup -r .config/* ~/.config
