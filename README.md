@@ -3,6 +3,10 @@
 ```sh
 make
 ```
+## xsession desktop entry for berry(as root)
+``` sh
+cp berry.desktop /usr/share/xsessions/
+```
 ## Notice
 The way my Awesome and Neofetch configs work is they resolve a symlink in .config called startup_sound, backgound, and neofetch_img. That means all one has to do is make symlinks like so to set these;
 ```sh
