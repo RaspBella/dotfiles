@@ -59,6 +59,8 @@ startup_sound = os.getenv("HOME") .. "/.config/startup_sound"
 play_startup_sound = sound_player .. " " .. sound_player_args .. " " .. startup_sound
 screenshot_cmd="gnome-screenshot -i"
 screen_lock="slock"
+raise_volume="amixer sset Master playback 5%+"
+lower_volume="amixer sset Master playback 5%-"
 
 -- Gaps
 beautiful.useless_gap=5
@@ -309,6 +311,12 @@ globalkeys = gears.table.join(
     -- Screen locker
     awful.key({modkey, "Control"}, "l", function () awful.spawn(screen_lock) end,
               {description = "Lock your screen", group = "application"}),
+
+    -- Volume buttons
+    awful.key({}, "XF86AudioRaiseVolume", function () awful.spawn(raise_volume) end,
+              {description = "Raise system volume", group = "volume"}),
+    awful.key({}, "XF86AudioLowerVolume", function () awful.spawn(lower_volume) end,
+              {description = "Lower system volume", group = "volume"}),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
