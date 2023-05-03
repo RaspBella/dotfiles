@@ -16,3 +16,5 @@ get_weather ()
 eval "$(starship init bash)"
 
 complete -cf doas
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
