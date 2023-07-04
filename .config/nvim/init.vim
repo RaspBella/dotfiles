@@ -8,9 +8,14 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'fladson/vim-kitty' " For kitty syntax
 Plug 'junegunn/fzf.vim' " Integrate FZF with vim
 
+" Car theme!!! :3c
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+
 call plug#end()
 
 " Options
+colorscheme catppuccin-macchiato
+
 set relativenumber
 set number
 
