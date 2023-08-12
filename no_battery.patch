@@ -1,4 +1,4 @@
-9c9
-<     xsetroot -name "$(date +"%F %T") $(cat /sys/class/power_supply/BAT0/capacity)%"
+15c15
+<     xsetroot -name "$(date +"%F %T") :3"
 ---
->     xsetroot -name "$(date +"%F %T") :3"
+>     xsetroot -name "$(date +"%F %T") $(cat /sys/class/power_supply/BAT0/capacity)%"
