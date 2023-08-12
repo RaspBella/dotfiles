@@ -59,13 +59,15 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *roficmd[] = { "rofi", "-show", "drun" };
 static const char *termcmd[] = { "kitty", NULL };
-static const char *quit_cmd[]  = { "pkill", "X", NULL };
+static const char *lockcmd[] = { "slock", NULL };
+static const char *quitcmd[]  = { "pkill", "X", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_Escape, spawn,          {.v = lockcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -96,7 +98,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_r,      quit,           {0} },              //stop dwm
-	{ MODKEY|ShiftMask,             XK_q,      spawn,          {.v = quit_cmd } }, //stop x
+	{ MODKEY|ShiftMask,             XK_q,      spawn,          {.v = quitcmd } }, //stop x
 };
 
 /* button definitions */
