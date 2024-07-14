@@ -5,6 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export HISTSIZE=-1
+
 alias lsl="ls -lAh"
 alias rm="rm -i"
 
@@ -32,6 +34,9 @@ export FZF_DEFAULT_OPTS=" \
 --color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# bin dirs from home
+export PATH+=":~/.local/bin:~/.cargo/bin"
 
 # pnpm
 export PNPM_HOME="/home/bella/.local/share/pnpm"
