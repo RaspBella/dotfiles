@@ -1,1 +1,1 @@
-.awesome_xinitrc
+.dwm_xinitrc
