@@ -9,4 +9,5 @@ PS1='\[\033[35;49m\]\u\[\033[39;49m\]@\[\033[36;49m\]\h\[\033[39;49m\]:\[\033[32
 
 alias bashrc='$EDITOR ~/.bashrc && source ~/.bashrc'
 alias ls='exa -la'
-alias slowfetch='fastfetch | lolcat -a'
+alias ff='fastfetch'
+alias sf='fastfetch | lolcat -a'
