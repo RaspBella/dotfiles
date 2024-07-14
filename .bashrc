@@ -5,20 +5,13 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#Vim
-EDITOR=vim
+PS1='[\u@\h \W]\$ '
+PATH+=":~/.cargo/bin"
 
-#completion
-complete -cf sudo
+alias ls='exa -al'
+alias up="colorscript -e pacman && paru"
+alias neofetch="neofetch | lolcat"
+alias startawesome="startx ~/.wms/awesome/.xinitrc"
+alias startqtile="startx ~/.wms/qtile/.xinitrc"
 
-#alias's
-alias startawesome='startx ~/.wms/awesome/.xinitrc'
-alias l='exa -la'
-
-#
-export PATH=~/.cargo/bin:$PATH
-
-#starship prompt
-eval "$(starship init bash)"
-
-curl -s -L http://bit.ly/10hA8iC | bash
+colorscript -r

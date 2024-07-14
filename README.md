@@ -1,2 +1,2 @@
 # dotfiles
-Includes my bashrc, starship config, xinit scripts, WM configs, neofetch config, Backgrounds+nitrogen, and a setup script for symlinks.
+Includes my bashrc, xinit scripts, WM configs, neofetch config, Backgrounds and a makefile.
