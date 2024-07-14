@@ -51,8 +51,11 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 terminal = "alacritty"
 editor = "nvim"
 editor_cmd = terminal .. " -e " .. editor
-background = "/home/bella/Downloads/GAY.png"
+background = "/home/bella/Work/background"
 browser = "qutebrowser"
+sound_player = "mpv --no-video"
+startup_sound = "/home/bella/Work/startup_sound"
+play_startup_sound = sound_player .. " " .. startup_sound
 
 -- Gaps
 beautiful.useless_gap=4
@@ -66,13 +69,13 @@ modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
-    awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
+    awful.layout.suit.floating,
     -- awful.layout.suit.spiral,
     -- awful.layout.suit.spiral.dwindle,
     -- awful.layout.suit.max,
@@ -573,36 +576,5 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-awful.util.spawn("compton --vsync")
--- Numpad: [0-9] = [#90, #87-#89, #83-#85, #79-#81]
-local np_map = { 87, 88, 89, 83, 84, 85, 79, 80, 81 }
-for i = 1, 9 do
-   globalkeys = awful.util.table.join(
-      globalkeys,
-      awful.key({ modkey }, "#" .. np_map[i],
-        function ()
-           local screen = mouse.screen
-           if tags[screen][i] then
-              awful.tag.viewonly(tags[screen][i])
-           end
-        end),
-      awful.key({ modkey, "Control" }, "#" .. np_map[i],
-        function ()
-           local screen = mouse.screen
-           if tags[screen][i] then
-              awful.tag.viewtoggle(tags[screen][i])
-           end
-        end),
-      awful.key({ modkey, "Shift" }, "#" .. np_map[i],
-        function ()
-           if client.focus and tags[client.focus.screen][i] then
-              awful.client.movetotag(tags[client.focus.screen][i])
-           end
-        end),
-      awful.key({ modkey, "Control", "Shift" }, "#" .. np_map[i],
-        function ()
-           if client.focus and tags[client.focus.screen][i] then
-              awful.client.toggletag(tags[client.focus.screen][i])
-           end
-        end))
-end
+awful.spawn.with_shell("compton --vsync")
+awful.spawn.with_shell(play_startup_sound)
