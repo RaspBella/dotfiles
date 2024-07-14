@@ -16,3 +16,7 @@ you should do the following(as root)
 '''sh
 cp arch/profile/nvim.sh /etc/profile.d/
 '''
+### And for gentoo users
+you should do the following(as root)
+'''
+eselect editor set /usr/bin/nvim
