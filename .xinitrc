@@ -1,2 +1,1 @@
-#!/bin/sh
-exec dbus-launch --exit-with-session startplasma-x11
+.awesome_xinitrc
