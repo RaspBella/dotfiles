@@ -14,6 +14,9 @@ Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 " Wakatime to show how  silli I am
 Plug 'wakatime/vim-wakatime'
 
+" Rich presence
+Plug 'andweeb/presence.nvim'
+
 call plug#end()
 
 " Options
