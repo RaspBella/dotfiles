@@ -6,6 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias rm="rm -i"
+alias me="prideful trans --compact && prideful les --compact"
 
 get_weather ()
 {
