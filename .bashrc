@@ -7,11 +7,17 @@
 
 alias lsl="ls -lAh"
 alias rm="rm -i"
-alias icat="kitty +kitten icat"
-alias ssh="kitty +kitten ssh"
-alias me="figlet ${USER^} && prideful trans --compact && prideful les --compact"
 
-get_weather () {
+alias hyfetch="hyfetch --ascii-file=/home/bella/.config/genchu.ascii"
+
+kitty_alias() {
+    alias icat="kitty +kitten icat"
+    alias ssh="kitty +kitten ssh"
+}
+
+test $TERM = xterm-kitty && kitty_alias
+
+get_weather() {
     curl wttr.in/$1
 }
 
