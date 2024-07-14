@@ -1,4 +1,2 @@
-#!/bin/bash
-
-sxhkd &
-exec berry
+#!/bin/sh
+exec dbus-launch --exit-with-session startplasma-x11
