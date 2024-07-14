@@ -1,0 +1,20 @@
+function check {
+if [ -L ~/$1 ] ; then
+   if [ -e ~/$1 ] ; then
+      echo "Good link:	~/$1"
+   else
+      echo "Broken link:	~/$1"
+   fi
+elif [ -e ~/$1 ] ; then
+   echo "Not a link:	~/$1"
+else
+   echo "Missing:	~/$1"
+fi
+}
+
+mapfile -t symlinks < symlinks.txt
+
+for symlink in ${symlinks[@]}
+do
+	check $symlink
+done

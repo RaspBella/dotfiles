@@ -1,0 +1,6 @@
+.bashrc
+.config/awesome
+.config/neofetch
+.config/nitrogen
+.config/starship.toml
+.wms
