@@ -5,6 +5,7 @@ call plug#end()
 
 " Options
 set relativenumber
+set number
 
 " Tabs size
 set expandtab
