@@ -11,14 +11,14 @@ PATH+=':~/.cargo/bin'
 TERMINAL='/usr/bin/kitty'
 EDITOR='/usr/bin/vim'
 
-alias bashrc='$EDITOR ~/.bashrc'
+alias bashrc='$EDITOR ~/.bashrc && source ~/.bashrc'
 alias ls='exa -al'
 alias up='colorscript -e pacman && paru'
 alias neofetch='neofetch | lolcat'
 alias startawesome='startx ~/.wms/awesome/.xinitrc'
 alias startqtile='startx ~/.wms/qtile/.xinitrc'
-alias copy_to_ext_disk='rsync -av --progress ~ ~/Toshiba --exclude Toshiba --exclude .cache --exclude .gnupg'
+alias copy_to_disk='rsync -av --progress ~ ~/Toshiba --exclude="Toshiba" --exclude="repos" --exclude="backgrounds" --exclude=".*" && cp -u -r ~/.minecraft/resourcepacks ~/.minecraft/saves ~/Toshiba'
 
 colorscript -r
 
-alias bunch_o_stuff='prideful bi --compact && prideful trans --compact && prideful enby --compact && $TERMINAL sh -c "neofetch && read"'
+alias bunch_o_stuff='PS1="" && clear && prideful bi --compact && prideful trans --compact && prideful enby --compact && $TERMINAL sh -c "neofetch | lolcat && read"'
