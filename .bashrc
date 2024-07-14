@@ -5,6 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+alias exa="exa --icons"
 alias lsl="ls -lAh"
 alias rm="rm -i"
 alias icat="kitty +kitten icat"
