@@ -1,6 +1,13 @@
 " vim-plug
 call plug#begin()
-Plug 'fladson/vim-kitty'
+
+" Install fzf system-wide
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Plugins
+Plug 'fladson/vim-kitty' " For kitty syntax
+Plug 'junegunn/fzf.vim' " Integrate FZF with vim
+
 call plug#end()
 
 " Options
