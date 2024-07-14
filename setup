@@ -4,11 +4,24 @@ if [ -L ~/$1 ] ; then
       echo "Good link:	~/$1"
    else
       echo "Broken link:	~/$1"
+      echo "Removing broken link..."
+      rm -r ~/$1
+      echo "Creating symlink..."
+      ln -s ~/github/dotfiles/$1 ~/$1
+      check $1
    fi
 elif [ -e ~/$1 ] ; then
    echo "Not a link:	~/$1"
+   echo "Removing file..."
+   rm -r ~/$1
+   echo "Creating symlink..."
+   ln -s ~/github/dotfiles/$1 ~/$1
+   check $1
 else
-   echo "Missing:	~/$1"
+   echo "Missing link:	~/$1"
+   echo "Creating symlink..."
+   ln -s ~/github/dotfiles/$1 ~/$1
+   check $1
 fi
 }
 
