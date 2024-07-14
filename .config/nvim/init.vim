@@ -4,7 +4,7 @@ Plug 'fladson/vim-kitty'
 call plug#end()
 
 " Options
-set number
+set relativenumber
 
 " Tabs size
 set expandtab
