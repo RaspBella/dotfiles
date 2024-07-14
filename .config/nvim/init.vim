@@ -9,3 +9,4 @@ set number
 
 " Tabs 😎
 set noexpandtab
+set shiftwidth=4
