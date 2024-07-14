@@ -53,9 +53,10 @@ editor = "nvim"
 editor_cmd = terminal .. " -e " .. editor
 background = "/home/bella/Work/background"
 browser = "qutebrowser"
-sound_player = "mpv --no-video"
+sound_player = "mpv"
+sound_player_args = "--no-video"
 startup_sound = "/home/bella/Work/startup_sound"
-play_startup_sound = sound_player .. " " .. startup_sound
+play_startup_sound = sound_player .. " " .. sound_player_args .. " " .. startup_sound
 
 -- Gaps
 beautiful.useless_gap=4
@@ -577,4 +578,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 awful.spawn.with_shell("compton --vsync")
-awful.spawn.with_shell(play_startup_sound)
+awful.spawn.with_shell(terminal .. " -e killall " .. sound_player .. " && " .. play_startup_sound)
