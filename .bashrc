@@ -12,6 +12,7 @@ alias icat="kitty +kitten icat"
 alias ssh="kitty +kitten ssh"
 alias me="figlet ${USER^} && prideful trans --compact && prideful les --compact"
 alias ani-cli="ani-cli --rofi"
+alias pfetch='PF_ASCII="Catppuccin" pfetch'
 
 get_weather ()
 {
