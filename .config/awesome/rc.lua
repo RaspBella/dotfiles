@@ -58,6 +58,7 @@ sound_player_args = "--no-video"
 startup_sound = os.getenv("HOME") .. "/.configstartup_sound"
 play_startup_sound = sound_player .. " " .. sound_player_args .. " " .. startup_sound
 screenshot_cmd="gnome-screenshot -i"
+screen_lock="slock"
 
 -- Gaps
 beautiful.useless_gap=5
@@ -304,6 +305,10 @@ globalkeys = gears.table.join(
     -- Open screenshot app
     awful.key({}, "Print", function () awful.spawn(screenshot_cmd) end,
               {description = "open your screenshot app", group = "applications"}),
+
+    -- Screen locker
+    awful.key({modkey, "Control"}, "l", function () awful.spawn(screen_lock) end,
+              {description = "Lock your screen", group = "application"}),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
