@@ -31,6 +31,7 @@ from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = guess_terminal()
+browser = "qutebrowser"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -71,8 +72,7 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod], "d", lazy.spawn("dmenu_run"), desc="Spawn dmenu"),
-    key([mod], "s", lazy.spawn("bunch_o_stuff"), desc="Shows off rice"),
+    Key([mod], "b", lazy.spawn(browser), desc="Open your browser")
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -138,7 +138,7 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("Bella's config", name="default"),
+                widget.TextBox("Bella's config", name="not default"),
                 widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Systray(),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
@@ -194,4 +194,4 @@ wl_input_rules = None
 #
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
-wmname = "LG3D"
+wmname = "Bella's Qtile"
