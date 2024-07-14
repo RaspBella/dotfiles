@@ -48,10 +48,10 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
-editor = os.getenv("EDITOR") or "vim"
+terminal = os.getenv("TERMINAL") or "alacritty"
+editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
-background = os.getenv("background") or "forest.jpg"
+background = os.getenv("BACKGROUND") or "forest.jpg"
 
 -- Gaps
 beautiful.useless_gap=4
