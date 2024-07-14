@@ -7,7 +7,5 @@ call plug#end()
 set relativenumber
 set number
 
-" Tabs size
-set expandtab
-set shiftwidth=4
-set tabstop=4
+" Tabs 😎
+set noexpandtab
