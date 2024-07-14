@@ -11,4 +11,7 @@ alias startawesome='startx ~/.wms/awesome/.xinitrc'
 alias l='exa -la'
 alias hibernate='systemctl hibernate'
 
+#variables
+check_battery_status="running"
+
 eval "$(starship init bash)"

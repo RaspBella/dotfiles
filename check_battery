@@ -1,4 +1,4 @@
-while [ $(cat ~/github/dotfiles/check_battery_status) = "running" ]
+while [ $check_battery_status = "running" ]
 do
 	if [ $(cat /sys/class/power_supply/BAT0/capacity) -lt 11 ] && [ $(cat /sys/class/power_supply/BAT0/status) = "Discharging" ]
 	then
