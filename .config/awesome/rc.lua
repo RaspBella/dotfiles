@@ -48,10 +48,11 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = os.getenv("TERMINAL") or "alacritty"
-editor = os.getenv("EDITOR") or "nvim"
+terminal = "alacritty"
+editor = "nvim"
 editor_cmd = terminal .. " -e " .. editor
-background = os.getenv("BACKGROUND") or "forest.jpg"
+background = "~/Downloads/Art.png"
+browser = "qutebrowser"
 
 -- Gaps
 beautiful.useless_gap=4
@@ -161,7 +162,7 @@ local function set_wallpaper(s)
 	if type(wallpaper) == "function" then
             wallpaper = wallpaper(s)
         end
-        gears.wallpaper.maximized("/home/bella/Backgrounds/"..background, s)
+        gears.wallpaper.maximized(background, s)
     end
 end
 
@@ -284,6 +285,11 @@ globalkeys = gears.table.join(
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
+
+    -- Open browser
+    awful.key({modkey,},"b", function () awful.spawn(browser) end,
+              {description = "open your browser", group = "applications"}),
+
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
@@ -566,4 +572,37 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
-awful.util.spawn("compton")
+
+awful.util.spawn("compton --vsync")
+-- Numpad: [0-9] = [#90, #87-#89, #83-#85, #79-#81]
+local np_map = { 87, 88, 89, 83, 84, 85, 79, 80, 81 }
+for i = 1, 9 do
+   globalkeys = awful.util.table.join(
+      globalkeys,
+      awful.key({ modkey }, "#" .. np_map[i],
+        function ()
+           local screen = mouse.screen
+           if tags[screen][i] then
+              awful.tag.viewonly(tags[screen][i])
+           end
+        end),
+      awful.key({ modkey, "Control" }, "#" .. np_map[i],
+        function ()
+           local screen = mouse.screen
+           if tags[screen][i] then
+              awful.tag.viewtoggle(tags[screen][i])
+           end
+        end),
+      awful.key({ modkey, "Shift" }, "#" .. np_map[i],
+        function ()
+           if client.focus and tags[client.focus.screen][i] then
+              awful.client.movetotag(tags[client.focus.screen][i])
+           end
+        end),
+      awful.key({ modkey, "Control", "Shift" }, "#" .. np_map[i],
+        function ()
+           if client.focus and tags[client.focus.screen][i] then
+              awful.client.toggletag(tags[client.focus.screen][i])
+           end
+        end))
+end
