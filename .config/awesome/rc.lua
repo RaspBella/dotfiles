@@ -51,7 +51,7 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 terminal = "alacritty"
 editor = "nvim"
 editor_cmd = terminal .. " -e " .. editor
-background = "~/Downloads/Art.png"
+background = "~/Downloads/GAY.png"
 browser = "qutebrowser"
 
 -- Gaps
