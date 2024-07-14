@@ -59,7 +59,7 @@ startup_sound = "/home/bella/startup_sound"
 play_startup_sound = sound_player .. " " .. sound_player_args .. " " .. startup_sound
 
 -- Gaps
-beautiful.useless_gap=4
+beautiful.useless_gap=5
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -291,9 +291,14 @@ globalkeys = gears.table.join(
               {description = "quit awesome", group = "awesome"}),
 
     -- Open browser
-    awful.key({modkey,},"b", function () awful.spawn(browser) end,
+    awful.key({modkey}, "b", function () awful.spawn(browser) end,
               {description = "open your browser", group = "applications"}),
 
+    -- dubious
+    awful.key({modkey},"a", function () awful.spawn(".config/autoclicker.sh") end,
+              {description = "start being dubious", group = "dubious stuff"}),
+    awful.key({modkey, "Control"}, "a", function () awful.spawn("pkill autoclicker") end,
+              {description = "stop being dubious", group = "dubious stuff"}),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
@@ -577,5 +582,5 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-awful.spawn.with_shell("picom --vsync")
-awful.spawn.with_shell(terminal .. " -e killall " .. sound_player .. " cbatticon && cbatticon && " .. play_startup_sound)
+awful.spawn("picom --vsync")
+awful.spawn(terminal .. " -e killall " .. sound_player .. " cbatticon && cbatticon && " .. play_startup_sound)
