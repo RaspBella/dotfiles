@@ -51,11 +51,11 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 terminal = "alacritty"
 editor = "nvim"
 editor_cmd = terminal .. " -e " .. editor
-background = "/home/bella/Work/background"
+background = "/home/bella/background"
 browser = "qutebrowser"
 sound_player = "mpv"
 sound_player_args = "--no-video"
-startup_sound = "/home/bella/Work/startup_sound"
+startup_sound = "/home/bella/startup_sound"
 play_startup_sound = sound_player .. " " .. sound_player_args .. " " .. startup_sound
 
 -- Gaps
@@ -578,4 +578,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 awful.spawn.with_shell("compton --vsync")
-awful.spawn.with_shell(terminal .. " -e killall " .. sound_player .. " && " .. play_startup_sound)
+awful.spawn.with_shell(terminal .. " -e killall " .. sound_player .. " cbatticon && cbatticon && " .. play_startup_sound)
