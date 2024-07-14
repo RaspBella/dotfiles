@@ -298,6 +298,10 @@ globalkeys = gears.table.join(
     awful.key({modkey}, "b", function () awful.spawn(browser) end,
               {description = "open your browser", group = "applications"}),
     
+    -- Open editor
+    awful.key({modkey}, "e", function () awful.spawn(editor_cmd) end,
+	      {description = "open your editor", group = "applications"}),
+    
     -- Open VMM
     awful.key({modkey}, "v", function () awful.spawn("virt-manager") end,
 	      {description = "open VMM", group = "applications"}),
