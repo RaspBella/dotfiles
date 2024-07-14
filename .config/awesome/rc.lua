@@ -48,14 +48,14 @@ end
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- Programs.
-terminal = "alacritty"
-editor = "nvim"
+terminal = "kitty"
+editor = os.getenv("EDITOR")
 editor_cmd = terminal .. " -e " .. editor
-background = "/home/bella/background"
-browser = "qutebrowser"
+background = os.getenv("HOME") .. "/.config/background"
+browser = "firefox"
 sound_player = "mpv"
 sound_player_args = "--no-video"
-startup_sound = "/home/bella/startup_sound"
+startup_sound = os.getenv("HOME") .. "/.configstartup_sound"
 play_startup_sound = sound_player .. " " .. sound_player_args .. " " .. startup_sound
 
 -- Gaps
