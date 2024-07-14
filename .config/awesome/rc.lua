@@ -566,4 +566,3 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Autostart applications
 awful.util.spawn("picom")
 awful.util.spawn("nitrogen --restore")
--- test
