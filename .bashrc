@@ -11,7 +11,10 @@ alias bashrc="$EDITOR ~/.bashrc && source ~/.bashrc"
 alias ls="ls --hyperlink=auto --color=auto -lAh"
 alias exa="exa -la"
 alias neofetch="neofetch | lolcat"
+alias sudo="doas"
 
 PATH+=":~/.cargo/bin:~/.local/bin"
 
 eval "$(starship init bash)"
+
+complete -cf doas
