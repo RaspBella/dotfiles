@@ -6,6 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias rm="rm -i"
+alias icat="kitty +kitten icat"
 alias me="figlet ${USER^} && prideful trans --compact && prideful les --compact"
 
 get_weather ()
