@@ -9,7 +9,9 @@ alias exa="exa --icons"
 alias lsl="ls -lAh"
 alias rm="rm -i"
 alias icat="kitty +kitten icat"
+alias ssh="kitty +kitten ssh"
 alias me="figlet ${USER^} && prideful trans --compact && prideful les --compact"
+alias ani-cli="ani-cli --rofi"
 
 get_weather ()
 {
