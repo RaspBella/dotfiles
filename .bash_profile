@@ -14,7 +14,9 @@ ssh-add ~/.ssh/id_ed25519
 export PATH+=":~/.cargo/bin:~/go/bin:~/.local/bin:"
 
 # lauch hyprland if not already running
-if ! pgrep -x "Hyprland" >/dev/null
-then
-    dbus-launch Hyprland
-fi
+maybe_hyprland() {
+    if ! pgrep -x "Hyprland" >/dev/null
+    then
+	dbus-launch Hyprland
+    fi
+}
