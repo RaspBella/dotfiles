@@ -1,1 +1,17 @@
-exec dbus-launch --sh-syntax --exit-with-session dwm
+# Transparency, etc
+xcompmgr &
+
+# Set background with feh
+~/.fehbg
+
+# Statusbar loop
+while true; do
+    xsetroot -name "$(date +"%F %T") $(cat /sys/class/power_supply/BAT0/capacity)%"
+    sleep 1s # Update time every second
+done &
+
+while true
+do
+    # No logging
+    dwm >/dev/null 2>&1
+done
