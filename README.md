@@ -18,5 +18,6 @@ cp arch/profile/nvim.sh /etc/profile.d/
 '''
 ### And for gentoo users
 you should do the following(as root)
-'''
+'''sh
 eselect editor set /usr/bin/nvim
+'''
