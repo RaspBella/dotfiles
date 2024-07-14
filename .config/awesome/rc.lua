@@ -57,6 +57,7 @@ sound_player = "mpv"
 sound_player_args = "--no-video"
 startup_sound = os.getenv("HOME") .. "/.configstartup_sound"
 play_startup_sound = sound_player .. " " .. sound_player_args .. " " .. startup_sound
+screenshot_cmd="gnome-screenshot -i"
 
 -- Gaps
 beautiful.useless_gap=5
@@ -198,7 +199,7 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist {
+    s.mytasklist = awful.widget.tasklist {"Print",
         screen  = s,
         filter  = awful.widget.tasklist.filter.currenttags,
         buttons = tasklist_buttons
@@ -299,6 +300,10 @@ globalkeys = gears.table.join(
               {description = "start being dubious", group = "dubious stuff"}),
     awful.key({modkey, "Control"}, "a", function () awful.spawn("pkill autoclicker") end,
               {description = "stop being dubious", group = "dubious stuff"}),
+
+    -- Open screenshot app
+    awful.key({}, "Print", function () awful.spawn(screenshot_cmd) end,
+              {description = "open your screenshot app", group = "applications"}),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
