@@ -65,7 +65,7 @@
     },
 	
     "clock#3": {
-	"format": "{:%D}",
+	"format": "{:%F}",
 	"tooltip": false
     },
     
