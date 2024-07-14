@@ -12,7 +12,7 @@ xcompmgr &
 
 # Statusbar loop
 while true; do
-    xsetroot -name "$(date +"%F %T") $(cat /sys/class/power_supply/BAT0/capacity)%"
+    xsetroot -name "$(date +"%a %F %r") $(cat /sys/class/power_supply/BAT0/capacity)%"
     sleep 1s # Update time every second
 done &
 
