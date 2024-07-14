@@ -297,6 +297,10 @@ globalkeys = gears.table.join(
     -- Open browser
     awful.key({modkey}, "b", function () awful.spawn(browser) end,
               {description = "open your browser", group = "applications"}),
+    
+    -- Open VMM
+    awful.key({modkey}, "v", function () awful.spawn("virt-manager") end,
+	      {description = "open VMM", group = "applications"}),
 
     -- dubious
     awful.key({modkey},"a", function () awful.spawn(".config/autoclicker.sh") end,
