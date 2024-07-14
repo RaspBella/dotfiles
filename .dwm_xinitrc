@@ -1,3 +1,9 @@
+# xprofile
+source ~/.xprofile
+
+# xresources
+xrdb ~/.Xresources
+
 # Transparency, etc
 xcompmgr &
 
