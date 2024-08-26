@@ -1,6 +1,0 @@
-#!/bin/sh
-
-[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
-
-gentoo-pipewire-launcher &
-exec dbus-launch --sh-syntax --exit-with-session awesome
