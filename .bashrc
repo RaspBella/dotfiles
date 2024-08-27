@@ -37,11 +37,3 @@ export FZF_DEFAULT_OPTS=" \
 
 # bin dirs from home
 export PATH+=":~/.local/bin:~/.cargo/bin"
-
-# pnpm
-export PNPM_HOME="/home/bella/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
