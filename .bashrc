@@ -7,6 +7,8 @@
 
 export HISTSIZE=-1
 
+PS1="\[\e[01;32m\]\u@\h\[\e[01;34m\] \w \[\e[01;36m\]\t \[\e[01;35m\]\$\[\e[00m\] "
+
 alias lsl="ls -lAh"
 alias rm="rm -i"
 
