@@ -6,8 +6,11 @@ Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'fladson/vim-kitty'
 Plug 'rust-lang/rust.vim'
 
-"  fuzzy finder
+" Fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Navigation with tmux
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
