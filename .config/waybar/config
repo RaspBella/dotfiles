@@ -4,6 +4,11 @@
     "layer": "top",
     "position": "bottom",
 
+    "modules-left": [
+        "custom/train",
+        "custom/right-arrow-dark"
+    ],
+
     "modules-center": [
 	"custom/left-arrow-dark",
 	"clock#1",
@@ -18,8 +23,6 @@
     
     "modules-right": [
 	"custom/left-arrow-dark",
-	"custom/left-arrow-light",
-	"custom/left-arrow-dark",
 	"memory",
 	"custom/left-arrow-light",
 	"custom/left-arrow-dark",
@@ -27,11 +30,7 @@
 	"custom/left-arrow-light",
 	"custom/left-arrow-dark",
 	"battery",
-	"custom/left-arrow-light",
-	"custom/left-arrow-dark",
 	"disk",
-	"custom/left-arrow-light",
-	"custom/left-arrow-dark"
     ],
 
     "custom/left-arrow-dark": {
@@ -98,8 +97,15 @@
     },
     
     "disk": {
-	"interval": 5,
+	"interval": 600,
 	"format": "Disk {percentage_used:2}%",
 	"path": "/"
+    },
+
+    "custom/train": {
+        "format": "Next: {} ",
+	"exec": "$HOME/.config/waybar/train.py",
+	"interval": "once",
+	"tooltip": false,
     }
 }

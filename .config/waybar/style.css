@@ -1,5 +1,5 @@
 * {
-    font-size: 20px;
+    font-size: 18px;
     font-family: monospace;
 }
 
@@ -20,7 +20,7 @@ window#waybar
     background: #1a1a1a;
 }
 
-#clock.1, #clock.2, #clock.3, #memory, #cpu, #battery, #disk
+#clock.1, #clock.2, #clock.3, #memory, #cpu, #battery, #disk, #custom-train
 {
     background: #1a1a1a;
 }
