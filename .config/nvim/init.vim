@@ -6,10 +6,10 @@ Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'fladson/vim-kitty'
 Plug 'rust-lang/rust.vim'
 
-" Fuzzy finder
+"  fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-" Navigation with tmux
+" navigation with tmux
 Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
@@ -22,5 +22,5 @@ set relativenumber
 set number
 
 " Tabs 😎
-set noexpandtab
+set expandtab
 set shiftwidth=4
