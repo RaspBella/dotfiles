@@ -21,6 +21,6 @@ colorscheme catppuccin-macchiato
 set relativenumber
 set number
 
-" Tabs 😎
+" Spaces :3
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
