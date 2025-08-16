@@ -12,4 +12,5 @@ for date in data:
         print(date)
         exit()
 
-print("next")
+print("none")
+exit()
