@@ -3,6 +3,7 @@
 {
     "layer": "top",
     "position": "bottom",
+    "output": "HDMI-A-2",
 
     "modules-left": [
         "custom/train",
@@ -105,7 +106,7 @@
     "custom/train": {
         "format": "Next: {} ",
 	"exec": "$HOME/.config/waybar/train.py",
-	"interval": "once",
+	"interval": 60,
 	"tooltip": false,
     }
 }
