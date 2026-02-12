@@ -5,7 +5,7 @@ from datetime import date
 
 today = date.today().isoformat()
 
-data = requests.get("https://bella.voklen.com/trans/data.json").json()
+data = requests.get("https://raspbella.xyz/trans/data.json").json()
 
 for date in data:
     if date >= today:
