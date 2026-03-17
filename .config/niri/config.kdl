@@ -105,7 +105,8 @@ layout {
     // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
     // Color of the ring on the active monitor.
-    active-color "#7fc8ff"
+    // active-color "#7fc8ff"
+    active-color "#b67fff"
 
     // Color of the ring on inactive monitors.
     //
@@ -207,8 +208,6 @@ spawn-at-startup "hyprpaper"
 spawn-at-startup "waybar"
 
 spawn-sh-at-startup "gentoo-pipewire-launcher restart"
-
-spawn-at-startup "xwaylandvideobridge"
 
 spawn-sh-at-startup "swayidle -w timeout 30 'if pgrep hyprlock; then niri msg action power-off-monitors; fi; hyprlock' resume 'niri msg action power-on-monitors' before-sleep 'hyprlock'"
 
