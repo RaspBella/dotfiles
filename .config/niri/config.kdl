@@ -56,6 +56,10 @@ output "HDMI-A-3" {
   position x=-1080 y=-840
 }
 
+output "LVDS-1" {
+  scale 0.75
+}
+
 
 
 // https://niri-wm.github.io/niri/Configuration:-Layout
