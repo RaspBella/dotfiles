@@ -213,7 +213,7 @@ spawn-at-startup "waybar"
 
 spawn-sh-at-startup "gentoo-pipewire-launcher restart"
 
-spawn-sh-at-startup "swayidle -w timeout 30 'if pgrep hyprlock; then niri msg action power-off-monitors; fi; hyprlock' resume 'niri msg action power-on-monitors' before-sleep 'hyprlock'"
+spawn-sh-at-startup "swayidle -w timeout 300 'if pgrep hyprlock; then niri msg action power-off-monitors; fi; hyprlock' resume 'niri msg action power-on-monitors' before-sleep 'hyprlock'"
 
 hotkey-overlay {
   skip-at-startup
